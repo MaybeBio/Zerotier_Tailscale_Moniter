@@ -7,3 +7,8 @@ vim ~/zt-monitor.sh
 ```
 
 zt-monitor.sh 脚本见当前目录
+
+加点执行权限
+```zsh
+chmod +x ~/zt-monitor.sh
+```
