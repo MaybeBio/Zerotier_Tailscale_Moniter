@@ -1,0 +1,12 @@
+[Unit]
+Description=ZeroTier Connectivity Monitor
+# 指定启动顺序: 必须等网络完全启动后, 再运行这个服务. 避免脚本在网络未就绪时执行导致检测失败
+After=network-online.target
+
+[Service]
+# 服务一次性执行完毕就退出, 脚本类任务
+Type=oneshot
+# 指定要执行的脚本路径，必须写绝对路径
+ExecStart= 我们step1定义的脚本zt-monitor.sh
+User=你的用户名
+Group=你的用户组
