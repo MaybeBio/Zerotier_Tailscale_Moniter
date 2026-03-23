@@ -1,0 +1,16 @@
+[Unit]
+Description=Tailscale Connectivity Monitor Service
+After=network-online.target tailscaled.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+# 此处替换为绝对路径
+ExecStart=/usr/bin/bash /data2/Zerotier_Tailscale_Moniter/Tailscale_Moniter/ts-monitor.sh
+Restart=always
+RestartSec=10
+User=root
+Group=root
+
+[Install]
+WantedBy=multi-user.target
